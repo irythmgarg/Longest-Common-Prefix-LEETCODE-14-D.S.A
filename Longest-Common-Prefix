@@ -1,0 +1,25 @@
+class Solution {
+public:
+    // Function to find the longest common prefix in a vector of strings
+    string longestCommonPrefix(vector<string>& strs) {
+        // Step 1: Sort the strings in lexicographical order
+        sort(strs.begin(), strs.end());
+        
+        string s = ""; // Initialize the result string
+        
+        // Step 2: Get the first and last strings after sorting
+        string word1 = strs[0]; // Smallest string lexicographically
+        string word2 = strs[strs.size() - 1]; // Largest string lexicographically
+        
+        // Step 3: Determine the minimum length between the two strings
+        int i = 0;
+        int p = min(word1.length(), word2.length());
+        
+        // Step 4: Compare characters of the two strings
+        while (i < p && word1[i] == word2[i]) {
+            s += word1[i++]; // Add common characters to the result string
+        }
+        
+        return s; // Return the longest common prefix
+    }
+};

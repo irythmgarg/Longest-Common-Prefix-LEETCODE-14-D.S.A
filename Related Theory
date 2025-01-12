@@ -1,0 +1,30 @@
+Theory Explanation:
+Sorting the strings:
+
+After sorting, the first string (word1) and the last string (word2) in the list will have the smallest and largest lexicographical order, respectively.
+Any common prefix between the first and last string will be the longest common prefix for the entire list of strings. This works because sorting groups similar strings together.
+Finding the prefix:
+
+The while loop compares the characters of word1 and word2 until either:
+A mismatch occurs, or
+The shorter string is fully traversed.
+Common characters are added to the result string s.
+Returning the result:
+
+The longest common prefix is stored in s and returned.
+Space Complexity:
+Auxiliary Space: The function uses a constant amount of extra space (O(1)) for variables like s, word1, word2, i, and p.
+Sorting Space: Sorting the vector requires O(m × log m) space in the worst case, where m is the size of the strs vector.
+Final Space Complexity: O(1) auxiliary space, but O(m × log m) for sorting.
+Time Complexity:
+Sorting the vector:
+
+Sorting the vector takes O(m × log m), where m is the number of strings in the vector. If the average string length is n, then sorting complexity is O(m × n × log m).
+Finding the common prefix:
+
+Comparing the first and last strings takes O(n), where n is the length of the shortest string in the vector.
+Final Time Complexity: O(m × n × log m), dominated by the sorting operation.
+Overall Complexity:
+Time Complexity: O(m × n × log m), where m is the number of strings and n is the average length of the strings.
+Space Complexity: O(1) auxiliary space, with O(m × log m) for sorting.
+This solution is efficient for a moderate number of strings but could be optimized further for very large datasets.
